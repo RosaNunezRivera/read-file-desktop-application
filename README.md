@@ -2,7 +2,6 @@
 
 The FileToDB Connector is a C# Windows Forms application designed to read and process text files containing data about movies, users, and ratings. It allows users to upload one or more text files, processes the data, and inserts it into a database. The application includes features such as error handling, logging, and progress tracking.
 
-
 ## Technologies Used
 
 - C#
@@ -29,7 +28,6 @@ The FileToDB Connector is a C# Windows Forms application designed to read and pr
 
 ## Usage
 
-
 1. Launch the application.
 2. Click on the "Upload Files" button to select one or more text files containing data (movies, users, or ratings).
 3. Once files are uploaded, click on the "Start" button to begin processing the files or or "Cancel" to come back to the Upload Files button.
@@ -37,8 +35,7 @@ The FileToDB Connector is a C# Windows Forms application designed to read and pr
     - **File Name**: Indicates the name of the file currently being processed.
     - **Percentage**: Shows the completion percentage of the processing task.
     - **Number of Records**: Displays the total number of records being processed.
-    - **Alerts      
-    - **: Displays the alerts occured during the process.
+    - **Alerts**: Displays the alerts occured during the process.
 5. After processing, users can view a log with details operations, alerts and numbers of records inserted ckick on the See Log button.
 
 ## Contributing Guidelines
@@ -54,7 +51,6 @@ This project is licensed under the [MIT License](LICENSE)
 
 ## Documentation Links
 For more detailed documentation, refer to [Wiki](https://github.com/RosaNunezRivera/read-file-desktop-application/wiki).
-
 
 ## Project Structure
 
