@@ -1,6 +1,14 @@
 # FileToDB Connector
 
-FileToDB Connector is a desktop application using Windows Forms developed in C# that allows users to upload and process text files containing data related to movies, users, and ratings. It reads the files, performs validations, and inserts the data into a database.  
+The FileToDB Connector is a C# Windows Forms application designed to read and process text files containing data about movies, users, and ratings. It allows users to upload one or more text files, processes the data, and inserts it into a database. The application includes features such as error handling, logging, and progress tracking.
+
+
+## Technologies Used
+
+- C#
+- Windows Forms
+- .NET Framework
+- Microsoft SQL Server (for database operations)
 
 ## Features
 
@@ -11,12 +19,13 @@ FileToDB Connector is a desktop application using Windows Forms developed in C# 
 - **Logging**: Implement logging and auditing features to record important events, actions, and errors that occur within the application.  
 - **Error Handling and Reporting**: Implement robust error handling mechanisms to gracefully handle errors that may occur during file reading, data processing, or database insertion.
 
-## Installation
+## Installation Instruction
 
-1. Clone the repository or download the source code.
-2. Open the solution in Visual Studio.
-3. Build the solution to ensure all dependencies are resolved.
-4. Run the application.
+1. Clone or download the project repository.
+2. Open the solution file in Visual Studio.
+3. Build the solution to restore dependencies.
+4. Configure the database connection string in the application.
+5. Run the application.
 
 ## Usage
 
@@ -56,11 +65,94 @@ FileToDB Connector is a desktop application using Windows Forms developed in C# 
 ![Log file](img/image9.jpg)
 **Image #8 Logfile**
 
-## Dependencies
+## Contributing Guidelines
 
-- Microsoft.Data.SqlClient: ADO.NET provider for SQL Server to interact with the database.
-- System.ComponentModel, System.Data, System.Diagnostics, System.Text: Standard .NET libraries for data manipulation and UI components.
+Contributions to this project are welcome. Please follow these guidelines:
+- Fork the repository.
+- Make your changes.
+- Submit a pull request, explaining the changes you've made.
 
-## Contributing
+## License Information
 
-Contributions are welcome! Feel free to fork the repository, make changes, and submit pull requests.
+This project is licensed under the [MIT License](LICENSE)
+
+## Documentation Links
+For more detailed documentation, refer to [Wiki](https://github.com/RosaNunezRivera/read-file-desktop-application/wiki).
+
+
+## Project Structure
+
+- Form1.cs: Main form containing the application logic.
+- README.md: Project documentation.
+
+## Testing Instructions
+
+To test the application:
+1. Prepare sample text files with movie, user, and rating data.
+2. Run the application and upload the sample files.
+3. Verify that the data is processed correctly and inserted into the database.
+
+## Contact Information
+
+For questions or support, contact [Rosa Nunez](mailto:rosamnunezrivera@gmail.com).
+
+## Acknowledgements
+
+- Mention any individuals or organizations you'd like to acknowledge for their contributions or support.
+
+## Version History
+
+- v1.0 (2024-04-14): Initial release
+- v1.1 (2024-04-16): Wiki page and Readme.md improvements
+
+## Code Example
+
+```csharp
+/// <summary>
+        /// Creating a method to show a button to upload .txt file(s) 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Creating the object type OpenFileDialog to allows the user upload files
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                //Set filter that only txt file can be uploaded 
+                openFileDialog.Filter = "(*.txt)|*.txt";
+
+                //Allowing to the user upload more one file at the same time 
+                openFileDialog.Multiselect = true;
+
+                openFileDialog.ShowDialog();
+
+                //Cleaning the listBox in case the user is re doing the action 
+                listBox.Items.Clear();
+
+                //Adding the files uploaded by the use to a lixtBox object
+                foreach (string file in openFileDialog.FileNames)
+                {
+                    listBox.Items.Add(file);
+                }
+
+                //Making visible the listbox filled with the route of the files loaded 
+                //and the button start
+                if (listBox.Items.Count == 0)
+                {
+                    MessageBox.Show("Plase select at least one file");
+                }
+                else
+                {
+                    listBox.Visible = true;
+                    buttonStart.Visible = true;
+                    buttonCancel.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error was occurred: " + ex.Message);
+            }
+        }
+```
