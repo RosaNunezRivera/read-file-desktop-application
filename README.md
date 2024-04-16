@@ -29,15 +29,19 @@ The FileToDB Connector is a C# Windows Forms application designed to read and pr
 
 ## Usage
 
-1.Launch the application.
-2.Click on the "Upload Files" button to select one or more text files containing data (movies, users, or ratings).
-3.Once files are uploaded, click on the "Start" button to begin processing the files or or "Cancel" to come back to the Upload Files button.
-4.Progress indicators will show the processing status.
+1. Launch the application.
+
+2. Click on the "Upload Files" button to select one or more text files containing data (movies, users, or ratings).
+
+3. Once files are uploaded, click on the "Start" button to begin processing the files or or "Cancel" to come back to the Upload Files button.
+
+4. Progress indicators will show the processing status.
 - **File Name**: Indicates the name of the file currently being processed.
 - **Percentage**: Shows the completion percentage of the processing task.
 - **Number of Records**: Displays the total number of records being processed.
 - **Alerts**: Displays the alerts occured during the process.
-5.After processing, users can view a log with details operations, alerts and numbers of records inserted ckick on the See Log button.
+
+5. After processing, users can view a log with details operations, alerts and numbers of records inserted ckick on the See Log button.
 
 ## Contributing Guidelines
 
